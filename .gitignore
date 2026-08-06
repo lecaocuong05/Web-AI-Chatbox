@@ -1,0 +1,10 @@
+venv/
+**/__pycache__/
+chroma_db/
+uploads/*
+image/*
+!uploads/.gitkeep
+!image/.gitkeep
+*.log
+vision_output.txt
+.env

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trợ lý AI Nội bộ</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <aside>
+        <div class="brand">
+            <div class="mark">AI</div>
+            <h1>Trợ lý Nội bộ</h1>
+            <p>Hỏi đáp dựa trên tài liệu công ty · Chạy nội bộ, không kết nối internet</p>
+        </div>
+
+        <p class="section-label">Nạp tài liệu</p>
+
+        <label class="upload-box">
+            <input type="file" id="file-input" accept=".pdf,.docx,.txt">
+            Bấm để chọn file<br>
+            (PDF, DOCX, TXT)
+        </label>
+
+        <div class="upload-status" id="upload-status"></div>
+
+        <div class="doc-list">
+            <p class="section-label" style="margin-top:22px;">Tài liệu đã nạp</p>
+
+            <div id="doc-list-items">
+                <p class="empty-note">Chưa có tài liệu nào.</p>
+            </div>
+        </div>
+    </aside>
+
+    <main>
+        <header>
+            <h2>Trò chuyện với trợ lý</h2>
+            <span class="hint">Câu trả lời được trích từ tài liệu đã nạp</span>
+        </header>
+
+        <div id="chat">
+            <div class="empty-chat" id="empty-chat">
+                <div class="mark">?</div>
+
+                <h3>Chưa có nội dung để hỏi</h3>
+
+                <p>
+                    Hãy nạp ít nhất một tài liệu, sau đó đặt câu hỏi tại đây.
+                </p>
+            </div>
+        </div>
+
+        <form id="chat-form">
+            <input
+                type="text"
+                id="question"
+                placeholder="Vui lòng đặt câu hỏi"
+                autocomplete="off">
+
+            <button id="send-btn" type="submit">
+                Gửi
+            </button>
+        </form>
+    </main>
+
+    <script src="/js/app.js"></script>
+
+    
+
+</body>
+
+</html>
