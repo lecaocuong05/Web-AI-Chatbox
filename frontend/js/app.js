@@ -154,3 +154,45 @@ async function deleteFile(filename) {
 window.addEventListener("DOMContentLoaded", () => {
     loadDocuments();
 });
+
+// ============= CUỘC TRÒ CHUYỆN MỚI ===========================
+const newChatBtn = document.getElementById("new-chat-btn");
+if (newChatBtn) {
+    newChatBtn.addEventListener("click", async () => {
+        const confirmed = confirm(
+            "Bạn có chắc muốn bắt đầu cuộc trò chuyện mới?\n" +
+            "Lịch sử hội thoại hiện tại sẽ bị xóa."
+        );
+        if (!confirmed) {
+            return;
+        }
+        newChatBtn.disabled = true;
+        newChatBtn.textContent = "Đang tạo...";
+        try {
+            const response = await fetch(
+                "/history/clear",
+                {
+                    method: "POST"
+                }
+            );
+            if (!response.ok) {
+                throw new Error(
+                    "Không thể xóa lịch sử hội thoại"
+                );
+            }
+            window.location.reload();
+        } catch (error) {
+            console.error(
+                "Lỗi tạo cuộc trò chuyện mới:",
+                error
+            );
+            alert(
+                "Không thể tạo cuộc trò chuyện mới. " +
+                "Vui lòng thử lại."
+            );
+            newChatBtn.disabled = false;
+            newChatBtn.textContent =
+                "+ Cuộc trò chuyện mới";
+        }
+    });
+}

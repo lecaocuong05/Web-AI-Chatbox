@@ -67,7 +67,7 @@ def describe_image(image_path):
     try:
         print("===== QWEN-VL BẮT ĐẦU =====")
         response = chat(
-            model="qwen2.5vl:7b",
+            model="qwen2.5vl:32b",
             messages=[
                 {
                     "role": "user",

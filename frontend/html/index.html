@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trợ lý AI Nội bộ</title>
 
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css?v=2">
 </head>
 
 <body>
@@ -38,9 +38,21 @@
     </aside>
 
     <main>
-        <header>
-            <h2>Trò chuyện với trợ lý</h2>
-            <span class="hint">Câu trả lời được trích từ tài liệu đã nạp</span>
+        <header class="chat-header">
+            <div class="chat-header-info">
+                <h2>Trò chuyện với trợ lý</h2>
+                <span class="hint">
+                    Câu trả lời được trích từ tài liệu đã nạp
+                </span>
+            </div>
+            <button
+                type="button"
+                id="new-chat-btn"
+                class="new-chat-btn"
+                title="Xóa lịch sử hội thoại hiện tại"
+            >
+                + Cuộc trò chuyện mới
+            </button>
         </header>
 
         <div id="chat">
@@ -68,9 +80,7 @@
         </form>
     </main>
 
-    <script src="/js/app.js"></script>
-
-    
+    <script src="/js/app.js?v=2"></script>
 
 </body>
 

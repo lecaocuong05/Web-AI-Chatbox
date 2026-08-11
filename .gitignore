@@ -8,3 +8,7 @@ image/*
 *.log
 vision_output.txt
 .env
+# Chat history database
+data/*.db
+data/*.sqlite
+data/*.sqlite3
